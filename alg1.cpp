@@ -6,28 +6,31 @@
 using namespace std;
 
 vector<int> enumeration(vector<int> data){
-	int sum=0, temp=0;
-	int index[2];
+	int temp=0, index[2];
 	vector<vector<int> > holder;
-	for(int i=0; i<data.size()-1; i++){
+	
+	//Go through and enumarate the totals of each line
+	for(int i=0; i<data.size(); i++){
 		vector<int> blue(data.size());
 		for(int j=i; j<data.size(); j++){
 			temp += data[j];
 			blue[j]=temp;
 		}
 		holder.push_back(blue);
+		temp = 0;
 	}
 
 	//Search for largest
-	for(int i=0; i<data.size()-1; i++){
-		for(int j=i; j<data.size(); j++){
+	int sum = holder[0][0];	//get inital value for sum
+	for(int i=0; i<data.size(); i++)
+		for(int j=i; j<data.size(); j++)
 			if(holder[i][j] > sum){
+				sum = holder[i][j];
 				index[0] = i;
 				index[1] = j;
 			}
-		}
-	}
-
+	
+	//Create the sub array of values and return it
 	vector<int>::const_iterator first = data.begin()+index[0];
 	vector<int>::const_iterator last = data.begin()+index[1]+1;
 	vector<int> newvec (first, last);
@@ -37,12 +40,8 @@ vector<int> enumeration(vector<int> data){
 int main(){
 
 	vector< vector<int> > data = file_input();
-	vector<int> temp = enumeration(data[0]);
 
-	for(int i=0; i<temp.size(); i++)
-		cout << temp[i] << " ";
-	
-
-	//file_output(data[0], data[0]);
+	for(int i=0; i<data.size(); i++)
+		//file_output(data[i], enumeration(data[i]));
 	return 0;
 }
