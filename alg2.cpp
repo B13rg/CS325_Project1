@@ -37,6 +37,7 @@ int main() {
    for (int i = best_i; i < max_subarray.size(); i++) {
       cout << max_subarray[i] << ", ";
    }
+	
    cout << endl << best_sum << endl;;
 
    return 0;
