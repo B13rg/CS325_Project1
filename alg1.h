@@ -1,4 +1,7 @@
 //Enumeration
+#ifndef ALG1
+#define ALG1
+
 #include <iostream>
 #include <vector>
 #include "file_io.h"
@@ -37,11 +40,4 @@ vector<int> enumeration(vector<int> data){
 	return newvec;
 }
 
-int main(){
-
-	vector< vector<int> > data = file_input();
-
-	for(int i=0; i<data.size(); i++)
-		//file_output(data[i], enumeration(data[i]));
-	return 0;
-}
+#endif

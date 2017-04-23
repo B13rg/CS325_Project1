@@ -1,4 +1,7 @@
 //Divide and Conquer
+#ifndef ALG3
+#define ALG3
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -65,10 +68,3 @@ vector<int> divider(vector<int> data, int left, int right){
 		return (rightans[0] > result[0]) ? rightans : result;
 }
 
-int main(){
-	vector< vector<int> > data = file_input();
-	
-	for(int i=0; i<data.size(); i++)
-		file_output(data[i], divider(data[i], 0, data[i].size()));
-	return 0;
-}

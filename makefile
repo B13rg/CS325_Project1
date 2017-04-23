@@ -3,16 +3,18 @@
 all: ALG1 ALG2 ALG3 ALG4
 
 ALG1:
-	g++ -std=c++11 -g -Wall -pedantic -ansi -o algorithm1.sh ./alg1.cpp
+	g++ -g -Wall -pedantic -ansi -std=c++11 -o algorithm1.sh ./algorithm1.cpp
 	
 ALG2:
-	g++ -std=c++11 -g -Wall -pedantic -ansi -o algorithm2.sh ./alg2.cpp
+	g++ -g -Wall -pedantic -ansi -std=c++11 -o algorithm2.sh ./algorithm2.cpp
 	
 ALG3:
-	g++ -std=c++11 -g -Wall -pedantic -ansi -o algorithm3.sh ./alg3.cpp
+	g++ -g -Wall -pedantic -ansi -std=c++11 -o algorithm3.sh ./algorithm3.cpp
 	
 ALG4:
-	g++ -std=c++11 -g -Wall -pedantic -ansi -o algorithm4.sh ./alg4.cpp
-	
+	g++ -g -Wall -pedantic -ansi -std=c++11 -o algorithm4.sh ./algorithm4.cpp
+
+timer:
+	g++ -g -Wall -pedantic -ansi -std=c++11 -o timer.sh ./timer.cpp
 clean:
 	-rm *.sh
