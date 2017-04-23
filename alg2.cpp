@@ -19,8 +19,6 @@ int main() {
       for (int j = i; j < k; j++) {
 	 sum += data[0][j];
 
-	 //cout << sum << endl;
-
 	 if (sum > best_sum) {
 	    best_sum = sum;
 	    best_i = i;
@@ -36,10 +34,10 @@ int main() {
 
    file_output(data[0], max_subarray);
 
-   //for (int i = best_i; i < max_subarray.size(); i++) {
-      //cout << max_subarray[i] << ", ";
-   //}
-   //cout << endl << best_sum << endl;;
+   for (int i = best_i; i < max_subarray.size(); i++) {
+      cout << max_subarray[i] << ", ";
+   }
+   cout << endl << best_sum << endl;;
 
    return 0;
 }
