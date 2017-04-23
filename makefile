@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := all
 
-all: ALG1 ALG3 ALG4
+all: ALG1 ALG2 ALG3 ALG4
 
 ALG1:
 	g++ -std=c++11 -g -Wall -pedantic -ansi -o algorithm1.sh ./alg1.cpp
