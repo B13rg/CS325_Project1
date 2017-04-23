@@ -1,7 +1,8 @@
 #include "alg1.h"
-//#include <alg2.h>
+#include "alg2.h"
 #include "alg3.h"
-//#include <alg4.h>
+#include "alg4.h"
+
 #include <stdlib.h>
 #include <time.h>
 #include <chrono>
@@ -46,7 +47,7 @@ int main(){
 	
 	//for each algorithm run each 5 times
 	
-	//alg1
+	//////////////////////////////////////////////////////alg1
 	for(int i=0; i<5; i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		enumeration(tens[i]);
@@ -71,9 +72,38 @@ int main(){
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
 		times[0][3] += duration_cast<duration<double>>(finish-start);		
 	}
-	//alg2
 	
-	//alg3
+	
+	
+	/////////////////////////////////////////////////////////alg2
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		better_enumerate(tens[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[1][0] += duration_cast<duration<double>>(finish-start);		
+	}
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		better_enumerate(hundred[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[1][1] += duration_cast<duration<double>>(finish-start);		
+	}
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		better_enumerate(thousand[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[1][2] += duration_cast<duration<double>>(finish-start);		
+	}
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		better_enumerate(tenthous[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[1][3] += duration_cast<duration<double>>(finish-start);		
+	}
+	
+	
+	
+	////////////////////////////////////////////////////////alg3
 	for(int i=0; i<5; i++){
 		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
 		divider(tens[i], 0, tens[i].size());
@@ -98,7 +128,35 @@ int main(){
 		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
 		times[2][3] += duration_cast<duration<double>>(finish-start);		
 	}
-	//alg4
+	
+	
+	/////////////////////////////////////////////////////////////alg4
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		linearTime(tens[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[3][0] += duration_cast<duration<double>>(finish-start);		
+	}
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		linearTime(hundred[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[3][1] += duration_cast<duration<double>>(finish-start);		
+	}
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		linearTime(thousand[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[3][2] += duration_cast<duration<double>>(finish-start);		
+	}
+	for(int i=0; i<5; i++){
+		chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+		linearTime(tenthous[i]);
+		chrono::high_resolution_clock::time_point finish = chrono::high_resolution_clock::now();
+		times[3][3] += duration_cast<duration<double>>(finish-start);		
+	}
+	
+	
 	
 	
 	//Clean up results and output to screen

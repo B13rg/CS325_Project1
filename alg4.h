@@ -1,4 +1,6 @@
 //Linear Time
+#ifndef ALG4
+#define ALG4
 
 #include <iostream>
 #include <vector>
@@ -26,6 +28,9 @@ vector<int> linearTime(vector<int> data){
 	return max; 
 }
 
+#endif
+
+/*
 int main(){
 	vector<vector<int>> data = file_input();
 
@@ -34,3 +39,4 @@ int main(){
 	}
 	return 0;
 }
+*/
