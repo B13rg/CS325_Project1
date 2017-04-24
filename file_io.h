@@ -17,7 +17,7 @@ vector<vector<int> > file_input(){
 	vector<vector<int> >values;
 
 	//real filename is "MSS_Problems.txt"
-	file.open("MSS_TestProblems.txt");
+	file.open("MSS_Problems.txt");
 
 	//Go through file and pull data
 	if(file.is_open()){
@@ -42,7 +42,7 @@ vector<vector<int> > file_input(){
 }
 
 void file_output(vector<int> complete, vector<int> sub){
-	ofstream file ("MSS_TestResults.txt", ios::app);
+	ofstream file ("MSS_Results.txt", ios::app);
 	if(file.is_open()){
 		int total =0;
 		//Add complete array to file
